@@ -1,11 +1,22 @@
 @import compass
+@import compass/layout/sticky-footer
 
+$font-color: darken(white, 5%)
+$font-size-body: 1.5em
+$primary-color: lighten(black, 5%)
++sticky-footer(200px)
+html
+    height: 100%
 body
+    +display-flex(flex)
+    +flex-direction(column)
+    min-height: 100%
     margin: 0
+    font-family: Arial
 
-header
-    background-color: lighten(black, 5%)
-    color: darken(white, 5%)
+.top_header
+    background-color: $primary-color
+    color: $font-color
     height: 4em
     width: 100%
     h1
@@ -14,6 +25,8 @@ header
         left: 2em
     nav
         +float-right
+        a
+            +link-colors($font-color)
     ul
         +inline-block-list-container
         position: relative
@@ -21,4 +34,39 @@ header
         right: 2em
         li
             +inline-block-list-item
+            width: 5em
+            height: 5em
 main
+    flex: 1
+    float: left
+    font-size: $font-size-body
+    text-align: center
+    width: 100%
+.boxes
+    padding-left: 10%
+    padding-right: 10%
+    +display-flex(flex)
+    +flex-wrap(wrap)
+    +justify-content(center)
+
+.box
+    +display-flex(inline-flex)
+    +align-items(center)
+    +justify-content(center)
+    color: $font-color
+    width: 25%
+    min-width: 10em
+    margin-left: 1.25%
+    margin-right: 1.25%
+    margin-top: 3em
+    margin-bottom: 3em
+    height: 10em
+    background-color: $primary-color
+    float: left;
+footer
+    position: relative
+    width: 100%
+    float: left
+    background-color: $primary-color
+    color: $font-color
+
