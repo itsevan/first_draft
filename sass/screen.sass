@@ -1,0 +1,24 @@
+@import compass
+
+body
+    margin: 0
+
+header
+    background-color: lighten(black, 5%)
+    color: darken(white, 5%)
+    height: 4em
+    width: 100%
+    h1
+        +float-left
+        position: relative
+        left: 2em
+    nav
+        +float-right
+    ul
+        +inline-block-list-container
+        position: relative
+        top: 2em 
+        right: 2em
+        li
+            +inline-block-list-item
+main
