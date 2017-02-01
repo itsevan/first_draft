@@ -19,12 +19,20 @@ body
     color: $font-color
     height: 4em
     width: 100%
+    @media screen and (max-width: 480px) 
+        height: 8em
     h1
         +float-left
         position: relative
         left: 2em
+        @media screen and (max-width: 480px)
+            float: none
     nav
         +float-right
+        @media screen and (max-width: 480px) 
+            float: none
+            position: relative
+            left: 4em
         a
             +link-colors($font-color)
     ul
@@ -69,4 +77,3 @@ footer
     float: left
     background-color: $primary-color
     color: $font-color
-
