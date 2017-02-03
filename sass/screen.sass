@@ -23,6 +23,10 @@ body
             float: none
     nav
         +float-right
+        @media screen and (max-width: 480px) 
+            float: none
+            position: relative
+            left: 4em
         a
             +link-colors($font-color)
     ul
