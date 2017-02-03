@@ -4,13 +4,7 @@
 $font-color: darken(white, 5%)
 $font-size-body: 1.5em
 $primary-color: lighten(black, 5%)
-+sticky-footer(200px)
-html
-    height: 100%
 body
-    +display-flex(flex)
-    +flex-direction(column)
-    min-height: 100%
     margin: 0
     font-family: Arial
 
@@ -19,10 +13,14 @@ body
     color: $font-color
     height: 4em
     width: 100%
+    @media screen and (max-width: 500px)
+        height: 10em
     h1
         +float-left
         position: relative
         left: 2em
+        @media screen and (max-width: 500px)
+            float: none
     nav
         +float-right
         a
@@ -37,36 +35,29 @@ body
             width: 5em
             height: 5em
 main
-    flex: 1
     float: left
     font-size: $font-size-body
     text-align: center
     width: 100%
 .boxes
+    display: flex
     padding-left: 10%
     padding-right: 10%
     +display-flex(flex)
-    +flex-wrap(wrap)
     +justify-content(center)
-
+    @media screen and (max-width: 540px) 
+        +flex-direction(column)
+        +align-items(center)
 .box
-    +display-flex(inline-flex)
-    +align-items(center)
-    +justify-content(center)
-    color: $font-color
+    color: $primary-color
     width: 25%
-    min-width: 10em
-    margin-left: 1.25%
-    margin-right: 1.25%
-    margin-top: 3em
-    margin-bottom: 3em
-    height: 10em
+    width: 10em
+    margin: 1.25%
+    min-height: 10em
     background-color: $primary-color
-    float: left;
+    float: left
 footer
-    position: relative
     width: 100%
     float: left
     background-color: $primary-color
     color: $font-color
-
