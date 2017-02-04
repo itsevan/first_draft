@@ -13,27 +13,33 @@ body
     height: 4em
     @media screen and (max-width: 500px)
         height: 10em
+        text-align: center
     h1
+        +float-left
+        position: relative
+        top: .5em
+        margin: 0
         @media screen and (max-width: 500px)
+            float: none
     nav
         +float-right
         @media screen and (max-width: 480px) 
             float: none
             position: relative
-            left: 4em
+            top: 1em
         a
             +link-colors($font-color)
     ul
         +inline-block-list-container
         position: relative
         top: 2em 
-        right: 2em
         li
             +inline-block-list-item
             width: 5em
             height: 5em
 main
     font-size: $font-size-body
+    margin: 0
     text-align: center
 .boxes
     display: flex
